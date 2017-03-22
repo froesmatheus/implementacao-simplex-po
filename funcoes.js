@@ -267,10 +267,9 @@ function resolver() {
 	printTabela(matriz);
 	
 	var ite = 1;
-	while (condicaoParada(matriz)) { //ite<5 (teste)
-		calcMatriz(matriz);
+	while (condicaoParada(matriz)) {
 		document.getElementById("tab").innerHTML+="<p><b>Iteração "+ite+"<b/><p/>";
-		//printTabela(matriz);
+		calcMatriz(matriz);
 		ite++;
 	}
 }
