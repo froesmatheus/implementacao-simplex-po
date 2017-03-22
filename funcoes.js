@@ -32,7 +32,8 @@ function calcMatriz(p_matriz) {
 			indMenor = k;
 		}
 	}
-
+	
+	document.getElementById("tab").innerHTML+="<p>Troca VB: entra "+p_matriz[0][indMaior]+" e sai "+p_matriz[indMenor][0]+"<p/>";
 	p_matriz[indMenor][0] = p_matriz[0][indMaior];
 	
 	printTabela(p_matriz);
