@@ -12,6 +12,8 @@ function condicaoParada(p_matriz) {
 	function calcMatriz(p_matriz) {
 		var nLinhas = p_matriz.length - 1;
 		var nColunas = p_matriz[nLinhas].length - 1;
+
+		// Escolhendo qual colocar como variável básica
 		var maior = p_matriz[nLinhas][1];
 		indMaior = 1;
 		for (j = 2; j <= nColunas; j++) {
@@ -21,6 +23,7 @@ function condicaoParada(p_matriz) {
 			}
 		}
 
+		// Escolhendo qual variável básica sai
 		var menor = Number.MAX_VALUE;
 		var indMenor = 0;
 		for (k = 1; k < nLinhas; k++) {
@@ -34,6 +37,8 @@ function condicaoParada(p_matriz) {
 		
 		printTabela(p_matriz);
 		
+
+		// Deixando o valor da nova variável básica == 1
 		var aux = p_matriz[indMenor][indMaior];
 		for (l = 1; l <= nColunas; l++) {
 			p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
@@ -41,6 +46,8 @@ function condicaoParada(p_matriz) {
 		
 		printTabela(p_matriz);
 		
+
+		// Zerando os outros valores na coluna da nova variável básica
 		for (i = 1; i <= nLinhas; i++) {
 			var aux = p_matriz[i][indMaior];
 			if (i != indMenor) {
@@ -59,8 +66,8 @@ function condicaoParada(p_matriz) {
 			document.getElementById('y'+i).readOnly = true;
 			for (j = 1; j <= p_restricoes; j++) {
 				//document.getElementById('x'+i+j).style.outline = "0";
-				document.getElementById('x'+i+j).style.border = "0";
-				document.getElementById('x'+i+j).readOnly = true;
+				document.getElementById('x'+j+i).style.border = "0";
+				document.getElementById('x'+j+i).readOnly = true;
 			}
 		}
 		for (j = 1; j <= p_restricoes; j++) {
@@ -78,8 +85,8 @@ function condicaoParada(p_matriz) {
 				return 1;
 			}
 			for (j = 1; j <= p_restricoes; j++) {
-				if (document.getElementById('x'+i+j).value == "") {
-					document.getElementById('x'+i+j).focus();
+				if (document.getElementById('x'+j+i).value == "") {
+					document.getElementById('x'+j+i).focus();
 					alert('Informe os valores de todos os coeficientes.');
 					return 1;
 				}
@@ -219,6 +226,7 @@ function condicaoParada(p_matriz) {
 		
 		matriz[0][matriz[0].length] = 'b';
 
+		// Adicionando linhas com as variavéis básicas. Ex: 'f1', 'f2'
 		var x = document.querySelectorAll(".input");
 		indice = 0;
 		var coluna = 0;
@@ -241,6 +249,8 @@ function condicaoParada(p_matriz) {
 			indice++;
 		}
 		
+
+		// Adicionando a última linha '-Z'
 		var z = document.querySelectorAll(".inputZ");
 		coluna = 0;
 		matriz.push(['-Z']);
