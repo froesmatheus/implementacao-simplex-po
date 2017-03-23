@@ -276,8 +276,8 @@ function resolver() {
 		calcMatriz(matriz);
 		ite++;
 	}
-	var numFormatado = parseInt(matriz[linhas][colunas] * 100) / 100;
-	document.getElementById("tab").innerHTML+="<p><b>Z = "+numFormatado*-1+"</b></p>";
+	
+	var solucao = "Solução: ";
 	
 	for (var n = 1; n <= variaveis; n++) {
 		var valor = 0;
@@ -287,7 +287,13 @@ function resolver() {
 				break;
 			}
 		}
-		numFormatado = parseInt(valor * 100) / 100;
-		document.getElementById("tab").innerHTML+="<p><b>x<sub>"+n+"</sub> = "+numFormatado+"</b></p>";
+		var numFormatado = parseInt(valor * 100) / 100;
+		if (n == variaveis) {
+			solucao += "x<sub>"+n+"</sub> = "+numFormatado;
+		} else {
+			solucao += "x<sub>"+n+"</sub> = "+numFormatado+", ";
+		}
 	}
+	solucao += " e Z = "+(parseInt(matriz[linhas][colunas] * -100) / 100);
+	document.getElementById("tab").innerHTML+="<p><b>"+solucao+"</b></p>";
 }
