@@ -33,7 +33,7 @@ function calcMatriz(p_matriz) {
 		}
 	}
 	
-	document.getElementById("tab").innerHTML+="<p>Troca VB: entra "+p_matriz[0][indMaior]+" e sai "+p_matriz[indMenor][0]+"<p/>";
+	document.getElementById("tab").innerHTML+="<p>Troca VB: entra "+p_matriz[0][indMaior]+" e sai "+p_matriz[indMenor][0]+"</p>";
 	p_matriz[indMenor][0] = p_matriz[0][indMaior];
 	
 	printTabela(p_matriz);
@@ -45,7 +45,7 @@ function calcMatriz(p_matriz) {
 		p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
 	}
 	
-	document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"<p/>";
+	document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"</p>";
 	printTabela(p_matriz);
 	
 
@@ -56,7 +56,7 @@ function calcMatriz(p_matriz) {
 			for (j = 1; j <= nColunas; j++) {
 				p_matriz[i][j] = parseFloat(p_matriz[i][j]) + parseFloat(-1 * aux * p_matriz[indMenor][j]);
 			}
-			document.getElementById("tab").innerHTML+="<p>Linha "+i+" = Linha "+i+" + ("+-1*aux+") * Linha "+indMenor+"<p/>";
+			document.getElementById("tab").innerHTML+="<p>Linha "+i+" = Linha "+i+" + ("+-1*aux+") * Linha "+indMenor+"</p>";
 			printTabela(p_matriz);
 		}
 	}
@@ -271,8 +271,20 @@ function resolver() {
 	
 	var ite = 1;
 	while (condicaoParada(matriz)) {
-		document.getElementById("tab").innerHTML+="<p><b>Iteração "+ite+"<b/><p/>";
+		document.getElementById("tab").innerHTML+="<p><b>Iteração "+ite+"</b></p>";
 		calcMatriz(matriz);
 		ite++;
+	}
+	document.getElementById("tab").innerHTML+="<p><b>Z = "+matriz[linhas][colunas]*-1+"</b></p>";
+	
+	for (var n = 1; n <= variaveis; n++) {
+		var valor = 0;
+		for (var o = 1; o <= restricoes; o++) {
+			if (matriz[o][0] == 'x'+n) {
+				valor = matriz[o][colunas];
+				break;
+			}
+		}
+		document.getElementById("tab").innerHTML+="<p><b>x<sub>"+n+"</sub> = "+valor+"</b></p>";
 	}
 }
