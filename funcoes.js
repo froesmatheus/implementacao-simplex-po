@@ -45,16 +45,18 @@ function calcMatriz(p_matriz) {
 		p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
 	}
 	
+	document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"<p/>";
 	printTabela(p_matriz);
 	
 
 	// Zerando os outros valores na coluna da nova variável básica
 	for (i = 1; i <= nLinhas; i++) {
 		var aux = p_matriz[i][indMaior];
-		if (i != indMenor) {
+		if (i != indMenor && aux != 0) {
 			for (j = 1; j <= nColunas; j++) {
 				p_matriz[i][j] = parseFloat(p_matriz[i][j]) + parseFloat(-1 * aux * p_matriz[indMenor][j]);
 			}
+			document.getElementById("tab").innerHTML+="<p>Linha "+i+" = Linha "+i+" + ("+-1*aux+") * Linha "+indMenor+"<p/>";
 			printTabela(p_matriz);
 		}
 	}
