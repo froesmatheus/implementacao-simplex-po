@@ -41,13 +41,14 @@ function calcMatriz(p_matriz) {
 
 	// Deixando o valor da nova variável básica == 1
 	var aux = p_matriz[indMenor][indMaior];
-	for (l = 1; l <= nColunas; l++) {
-		p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
+	if (aux != 1) {
+		for (l = 1; l <= nColunas; l++) {
+			p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
+		}
+
+		document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"</p>";
+		printTabela(p_matriz);
 	}
-	
-	document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"</p>";
-	printTabela(p_matriz);
-	
 
 	// Zerando os outros valores na coluna da nova variável básica
 	for (i = 1; i <= nLinhas; i++) {
@@ -285,6 +286,7 @@ function resolver() {
 				break;
 			}
 		}
-		document.getElementById("tab").innerHTML+="<p><b>x<sub>"+n+"</sub> = "+valor+"</b></p>";
+		var numFormatado = parseInt(valor * 100) / 100;
+		document.getElementById("tab").innerHTML+="<p><b>x<sub>"+n+"</sub> = "+numFormatado+"</b></p>";
 	}
 }
