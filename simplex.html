@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<!--Desenvolvido como requisito parcial de avaliação da disciplina Pesquisa Operacional
-Prof. Adolfo Pinto Guimarães - Unit 2017.1 Aracaju-SE 16/03/2017 -->
+<!--Desenvolvido como requisito parcial de avaliaÃ§Ã£o da disciplina Pesquisa Operacional
+Prof. Adolfo Pinto GuimarÃ£es - Unit 2017.1 Aracaju-SE 16/03/2017 -->
  <head>
 	<meta name="author" content="Joao A. S. Matos">
-	<meta name="description" content="Altoritmo do método simplex, para maximização e com restrições <=">
+	<meta name="description" content="Altoritmo do mÃ©todo simplex, para maximizaÃ§Ã£o e com restriÃ§Ãµes <=">
     <meta name="keywords" content="simplex,altoritmo">
 	<script type="text/javascript" src="funcoes.js" charset="UTF-8"></script>
+	<link href="bootstrap.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<title>Simplex</title>
 
  </head>
  <body>
+  <div class="container">
 	<h1>Simplex - Passo a Passo</h1>
  <form name="form1">
 	<fieldset>
-	<label for="variaveis" class="lbl1">Quantas variáveis?</label>
-	<input type="number" class="inp1" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" focus />
+	<label for="variaveis" class="lbl1">Quantas variÃ¡veis?</label>
+	<input type="number" class="inp1" size="5%" maxlength="10" id="in1" name="variaveis" value="" min="1" focus style="height: 28px" />
 	<br />
 	<br />
-	<label for="regras" class="lbl1">Quantas restrições?</label>
-	<input type="number" class="inp1" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" />
-	<input type="button" class="inp1" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)"/>
+	<label for="regras" class="lbl1">Quantas restriÃ§Ãµes?</label>
+	<input type="number" class="inp1" size="5%" maxlength="10" id="in2" name="regras" value="" min="1" style="height: 28px" />
+	<input type="button" class="btn btn-primary btn-sm" class="inp1" id="btn1" name="ok" value="ok" onClick="criarForm(variaveis.value,regras.value)"/>
 	</fieldset>
   </form>
  
   <br/>
   <form action="" method="post" name="form2" id="form2" style="display:none">
-	<p><b>Função objetivo</b></p>
+	<p><b>FunÃ§Ã£o objetivo</b></p>
 	<div id="aqui"></div>
 	<br/>
-	<label><input type="button" id="btn2" name="calc" value="Resolver" onClick="resolver()" /></label>
-	<label><input type="reset" id="btn3" name="novo" value="Novo" onClick="atualizar()"/></label>
+	<label><input type="button" class="btn btn-primary btn-sm" id="btn2" name="calc" value="Resolver" onClick="resolver()" /></label>
+	<label><input type="reset" class="btn btn-success btn-sm" id="btn3" name="novo" value="Novo" onClick="atualizar()"/></label>
    </form>
 
-	<div id="tab"></div>
-	<div id="teste"></div>
+   <div id="tab" style="width: 80%; margin: 0 auto;"></div>
+
+  </div>
  </body>
 </html>
