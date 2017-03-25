@@ -45,8 +45,9 @@ function calcMatriz(p_matriz) {
 		for (l = 1; l <= nColunas; l++) {
 			p_matriz[indMenor][l] = p_matriz[indMenor][l] / aux;
 		}
-
-		document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+1/aux+"</p>";
+		var fracao = new Fraction(1/aux);
+		var numFormatado = fracao.toFraction();
+		document.getElementById("tab").innerHTML+="<p>Linha "+indMenor+" = Linha "+indMenor+" * "+numFormatado+"</p>";
 		printTabela(p_matriz);
 	}
 
@@ -57,7 +58,9 @@ function calcMatriz(p_matriz) {
 			for (j = 1; j <= nColunas; j++) {
 				p_matriz[i][j] = parseFloat(p_matriz[i][j]) + parseFloat(-1 * aux * p_matriz[indMenor][j]);
 			}
-			document.getElementById("tab").innerHTML+="<p>Linha "+i+" = Linha "+i+" + ("+-1*aux+") * Linha "+indMenor+"</p>";
+			var fracao = new Fraction(-1*aux);
+			var numFormatado = fracao.toFraction();
+			document.getElementById("tab").innerHTML+="<p>Linha "+i+" = Linha "+i+" + ("+numFormatado+") * Linha "+indMenor+"</p>";
 			printTabela(p_matriz);
 		}
 	}
@@ -287,13 +290,16 @@ function resolver() {
 				break;
 			}
 		}
-		var numFormatado = parseInt(valor * 100) / 100;
+		var fracao = new Fraction(valor);
+		var numFormatado = fracao.toFraction();
 		if (n == variaveis) {
 			solucao += "x<sub>"+n+"</sub> = "+numFormatado;
 		} else {
 			solucao += "x<sub>"+n+"</sub> = "+numFormatado+", ";
 		}
 	}
-	solucao += " e Z = "+(parseInt(matriz[linhas][colunas] * -100) / 100);
+	var fracao = new Fraction(matriz[linhas][colunas]);
+	var z = fracao.toFraction();
+	solucao += " e Z = "+z;
 	document.getElementById("tab").innerHTML+="<p><b>"+solucao+"</b></p>";
 }
