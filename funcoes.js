@@ -190,6 +190,10 @@ function printTabela(p_matriz) {
 				td.appendChild(sub);
 				td.insertBefore(texto, td.firstChild);
 			} else {
+				if (variavel != '-Z') {
+					var fracao = new Fraction(variavel);
+					variavel = fracao.toFraction();
+				}
 				var texto = document.createTextNode(variavel);
 				td.appendChild(texto);
 			}
