@@ -1,8 +1,4 @@
-input[type="number"] {
-	width:40px;
-	text-align: right;
-}
-
+/*
 label.lbl1,  input.inp1 {
 	display: block;
 	float: left;
@@ -15,11 +11,17 @@ label.lbl1 {
 	padding-bottom: 2%;
 }
 
-fieldset {
-	border: solid 1px #000;
-	padding-top: 2%;
-}
-
 br {
 	clear: left;
+}
+*/
+
+input[type="number"] {
+	width:40px;
+	text-align: right;
+}
+
+fieldset {
+	border: solid 1px #000;
+	padding: 2%;
 }
