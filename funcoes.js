@@ -154,6 +154,7 @@ function printTabela(p_matriz) {
 	var linhas = restricoes+1;
 	var colunas = restricoes + variaveis+1;
 	var tabela = document.createElement("table");
+	tabela.className = "table table-striped";
 	var thead = document.createElement("thead");
 	var tbody=document.createElement("tbody");
   
