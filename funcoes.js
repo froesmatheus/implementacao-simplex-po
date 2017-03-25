@@ -32,8 +32,9 @@ function calcMatriz(p_matriz) {
 			indMenor = k;
 		}
 	}
-	
-	document.getElementById("tab").innerHTML+="<p>Troca VB: entra "+p_matriz[0][indMaior]+" e sai "+p_matriz[indMenor][0]+"</p>";
+	var v_in = p_matriz[0][indMaior];
+	var v_out = p_matriz[indMenor][0];
+	document.getElementById("tab").innerHTML+="<p>Troca VB: entra "+v_in.substr(0,1)+"<sub>"+v_in.substr(1,1)+"</sub> e sai "+v_out.substr(0,1)+"<sub>"+v_out.substr(1,1)+"</sub></p>";
 	p_matriz[indMenor][0] = p_matriz[0][indMaior];
 	
 	printTabela(p_matriz);
