@@ -70,14 +70,17 @@ function calcMatriz(p_matriz) {
 //bloqueia edição nos inputs
 function esconder(p_variaveis, p_restricoes) {
 	for (i = 1; i <= p_variaveis; i++) {
+		document.getElementById('y'+i).style = "-moz-appearance:textfield;";
 		document.getElementById('y'+i).style.border = "0";
 		document.getElementById('y'+i).readOnly = true;
 		for (j = 1; j <= p_restricoes; j++) {
+			document.getElementById('x'+j+i).style = "-moz-appearance:textfield;";
 			document.getElementById('x'+j+i).style.border = "0";
 			document.getElementById('x'+j+i).readOnly = true;
 		}
 	}
 	for (j = 1; j <= p_restricoes; j++) {
+		document.getElementById('b'+j).style = "-moz-appearance:textfield;";
 		document.getElementById('b'+j).style.border = "0";
 		document.getElementById('b'+j).readOnly = true;
 	}
