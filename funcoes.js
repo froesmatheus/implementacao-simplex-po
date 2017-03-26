@@ -148,7 +148,7 @@ function criarForm(p_variaveis, p_restricoes) {
 		document.getElementById("btn1").style.display = 'none';
 		document.getElementById("in1").disabled = true;
 		document.getElementById("in2").disabled = true;
-		
+		document.getElementById('y1').focus();
 	}
 } 
 
@@ -318,4 +318,5 @@ function resolver() {
 	var z = fracao.toFraction();
 	solucao += " e Z = "+z*-1;
 	document.getElementById("tab").innerHTML+="<p><b>"+solucao+"</b></p>";
+	document.getElementById("btn4").type = 'button';
 }
