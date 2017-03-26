@@ -316,6 +316,6 @@ function resolver() {
 	}
 	var fracao = new Fraction(matriz[linhas][colunas]);
 	var z = fracao.toFraction();
-	solucao += " e Z = "+z;
+	solucao += " e Z = "+z*-1;
 	document.getElementById("tab").innerHTML+="<p><b>"+solucao+"</b></p>";
 }
