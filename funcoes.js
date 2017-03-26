@@ -188,18 +188,25 @@ function printTabela(p_matriz) {
 			var td = document.createElement("td");
 			if (o == 0 && n < linhas) {
 				var sub = document.createElement("sub");
+				var b = document.createElement("b");
 				var textoSub = document.createTextNode(variavel.substr(1,1));
 				var texto = document.createTextNode(variavel.substr(0,1));
 				sub.appendChild(textoSub)
-				td.appendChild(sub);
-				td.insertBefore(texto, td.firstChild);
+				b.appendChild(sub);
+				b.insertBefore(texto, b.firstChild);
+				td.appendChild(b);
 			} else {
 				if (variavel != '-Z') {
 					var fracao = new Fraction(variavel);
 					variavel = fracao.toFraction();
+					var texto = document.createTextNode(variavel);
+					td.appendChild(texto);
+				} else {
+					var b = document.createElement("b");
+					var texto = document.createTextNode(variavel);
+					b.appendChild(texto);
+					td.appendChild(b);
 				}
-				var texto = document.createTextNode(variavel);
-				td.appendChild(texto);
 			}
 			tr.appendChild(td);
 		}
