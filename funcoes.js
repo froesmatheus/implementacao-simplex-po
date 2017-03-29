@@ -114,6 +114,32 @@ function atualizar() {
 	window.location.href='simplex.html';
 }
 
+function mouseIn(id) {
+	document.getElementById("btnImg").src = "info_azul.png"
+}
+
+function mouseOut(id) {
+	document.getElementById("btnImg").src = "info.png"
+}
+
+function manual() {
+	var texto = 'Simplex - Passo a Passo\n\n'
+	+'Informe o número de variáveis (mínimo 1)\n'
++'Informe o número de restrições (mínimo 1)\n'
++'obs.: NÃO contar com a restrição Xi >= 0\n'
++'Clique no botão "OK"\n'
++'- Vai aparecer na tela o local para informar os valores dos coeficientes.\n'
++'Informe os valores dos coeficientes das variáveis na função objetivo\n'
++'Informe os valores dos coeficientes e da constante nas restrições\n'
++'Clique no botão "Resolver"\n'
++'- Vai aparecer na tela o passo a passo da resolução informando a operação realizada antes da tabela.\n'
++'- No final é exibido os valores das variáveis e o valor resultante da função objetivo.\n'
++'Clique no botão "Novo" para resolver outro problema.\n\n'
++'observações: O sistema só resolve problemas de maximização,\n'
++'com restrições de sinal "<=" e com constantes maiores que zero.';
+	alert(texto);
+}
+
 function criarForm(p_variaveis, p_restricoes) {
 	
 	if (p_variaveis == "" || p_variaveis <= 0 || p_variaveis != parseInt(p_variaveis)) {
