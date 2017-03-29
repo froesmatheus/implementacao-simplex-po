@@ -156,15 +156,15 @@ function criarForm(p_variaveis, p_restricoes) {
 	if (p_variaveis > 0 && p_restricoes > 0) {
 		document.getElementById("form2").style.display = 'block';
 		document.getElementById("aqui").innerHTML+="<span>Z = </span>";
-		document.getElementById("aqui").innerHTML+="<input type='number' class='inputZ' required size='5' maxlength='10' step='0.1' id='y1' name='y1' />x<sub>1</sub>";
+		document.getElementById("aqui").innerHTML+="<input type='number' class='inputZ' required autocomplete='off' size='5' maxlength='10' step='0.1' id='y1' name='y1' />x<sub>1</sub>";
 		for (var h = 2; h <= p_variaveis; h++) {
-			document.getElementById("aqui").innerHTML+=" + <input type='number' class='inputZ' required size='5' maxlength='10' step='0.1' id='y"+h+"' name='y"+h+"' />x<sub>"+h+"</sub>";
+			document.getElementById("aqui").innerHTML+=" + <input type='number' class='inputZ' required autocomplete='off' size='5' maxlength='10' step='0.1' id='y"+h+"' name='y"+h+"' />x<sub>"+h+"</sub>";
 		}
 		for (var i = 1; i <= p_restricoes; i++) {
 			document.getElementById("aqui").innerHTML+="<p><b>Restrição "+i+"</b></p>";
-			document.getElementById("aqui").innerHTML+="<input type='number' class='input' required size='5' maxlength='10' step='0.1' id='x"+i+"1' name='x"+i+"1' />x<sub>1</sub>";
+			document.getElementById("aqui").innerHTML+="<input type='number' class='input' required autocomplete='off' size='5' maxlength='10' step='0.1' id='x"+i+"1' name='x"+i+"1' />x<sub>1</sub>";
 			for (var j = 2; j <= p_variaveis; j++) {
-				document.getElementById("aqui").innerHTML+=" + <input type='number' class='input' required size='5' maxlength='10' step='0.1' id='x"+i+j+"' name='x"+i+j+"' />x<sub>"+j+"</sub>";
+				document.getElementById("aqui").innerHTML+=" + <input type='number' class='input' required autocomplete='off' size='5' maxlength='10' step='0.1' id='x"+i+j+"' name='x"+i+j+"' />x<sub>"+j+"</sub>";
 			}
 			document.getElementById("aqui").innerHTML+="<span> <= </span>"
 			+"<input type='number' class='input' required size='5' maxlength='10' id='b"+i+"' name='b"+i+"' style='text-align:left' />";
