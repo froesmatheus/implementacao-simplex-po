@@ -340,9 +340,9 @@ function resolver() {
 			solucao += "x<sub>"+n+"</sub> = "+numFormatado+", ";
 		}
 	}
-	var fracao = new Fraction(matriz[linhas][colunas]);
+	var fracao = new Fraction((matriz[linhas][colunas])*-1);
 	var z = fracao.toFraction();
-	solucao += " e Z = "+z*-1;
+	solucao += " e Z = "+z;
 	document.getElementById("tab").innerHTML+="<p><b>"+solucao+"</b></p>";
 	document.getElementById("btn4").type = 'button';
 }
