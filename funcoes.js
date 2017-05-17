@@ -27,7 +27,8 @@ function calcMatriz(p_matriz) {
 	var menor = Number.MAX_VALUE;
 	var indMenor = 0;
 	for (k = 1; k < nLinhas; k++) {
-		if (p_matriz[k][indMaior] != 0 && p_matriz[k][nColunas] / p_matriz[k][indMaior] < menor) {
+		var teste = p_matriz[k][nColunas] / p_matriz[k][indMaior]; //não testou após mudança
+		if (p_matriz[k][indMaior] != 0 && teste < menor && teste >= 0 ) { //não testou após mudança
 			menor = p_matriz[k][nColunas] / p_matriz[k][indMaior];
 			indMenor = k;
 		}
